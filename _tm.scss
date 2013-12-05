@@ -1,0 +1,142 @@
+//サイズ指定
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+//position指定
+@mixin relativeLeftTop($left, $top) {
+  position: relative;
+  left: $left;
+  top: $top;
+}
+
+@mixin relativeLeftBottom($left, $bottom) {
+  position: relative;
+  left: $left;
+  bottom: $bottom;
+}
+
+@mixin relativeRightTop($right, $top) {
+  position: relative;
+  right: $right;
+  top: $top;
+}
+
+@mixin relativeRightBottom($right, $bottom) {
+  position: relative;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin absoluteLeftTop($left, $top) {
+  position: absolute;
+  left: $left;
+  top: $top;
+}
+
+@mixin absoluteLeftBottom($left, $bottom) {
+  position: absolute;
+  left: $left;
+  bottom: $bottom;
+}
+
+@mixin absoluteRightTop($right, $top) {
+  position: absolute;
+  right: $right;
+  top: $top;
+}
+
+@mixin absoluteRightBottom($right, $bottom) {
+  position: absolute;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin fixedLeftTop($left, $top) {
+  position: fixed;
+  left: $left;
+  top: $top;
+}
+
+@mixin fixedLeftBottom($left, $bottom) {
+  position: fixed;
+  left: $left;
+  bottom: $bottom;
+}
+
+@mixin fixedRightTop($right, $top) {
+  position: fixed;
+  right: $right;
+  top: $top;
+}
+
+@mixin fixedRightBottom($right, $bottom) {
+  position: fixed;
+  right: $right;
+  bottom: $bottom;
+}
+
+@mixin heightNegativeTop($height) {
+  height: $height;
+  margin-top: -$height / 2;
+}
+
+@mixin heightNegativeBottom($height) {
+  height: $height;
+  margin-bottom: -$height / 2;
+}
+
+@mixin widthNegativeLeft($width) {
+  width: $width;
+  margin-left: -$width / 2
+}
+
+@mixin widthNegativeRight($width) {
+  width: $width;
+  margin-right: -$width / 2;
+}
+
+//角丸
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -o-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+//formカスタマイズ
+@mixin selectCustomize($width, $height){
+  @include appearance(button);
+  width: $width;
+  height: $height;
+  line-height: $height;
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+//radioカスタマイズ
+@mixin radioCustomize($width, $height){
+  @include appearance(button);
+  width: $width;
+  height: $height;
+  line-height: $height;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:checked:after {
+    display: block;
+    @include absoluteLeftTop(0, 0);
+    @include size($width, $height);
+    content: "";
+  }
+}
+
+//テーブル風dl

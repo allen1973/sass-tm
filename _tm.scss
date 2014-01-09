@@ -1,77 +1,77 @@
 //サイズ指定
-@mixin size($width, $height) {
+@mixin size($width, $height: $width) {
   width: $width;
   height: $height;
 }
 
 //position指定
-@mixin relativeLeftTop($left, $top) {
+@mixin relativeLeftTop($left: 0, $top: 0) {
   position: relative;
   left: $left;
   top: $top;
 }
 
-@mixin relativeLeftBottom($left, $bottom) {
+@mixin relativeLeftBottom($left: 0, $bottom: 0) {
   position: relative;
   left: $left;
   bottom: $bottom;
 }
 
-@mixin relativeRightTop($right, $top) {
+@mixin relativeRightTop($right: 0, $top: 0) {
   position: relative;
   right: $right;
   top: $top;
 }
 
-@mixin relativeRightBottom($right, $bottom) {
+@mixin relativeRightBottom($right: 0, $bottom: 0) {
   position: relative;
   right: $right;
   bottom: $bottom;
 }
 
-@mixin absoluteLeftTop($left, $top) {
+@mixin absoluteLeftTop($left: 0, $top: 0) {
   position: absolute;
   left: $left;
   top: $top;
 }
 
-@mixin absoluteLeftBottom($left, $bottom) {
+@mixin absoluteLeftBottom($left: 0, $bottom: 0) {
   position: absolute;
   left: $left;
   bottom: $bottom;
 }
 
-@mixin absoluteRightTop($right, $top) {
+@mixin absoluteRightTop($right: 0, $top: 0) {
   position: absolute;
   right: $right;
   top: $top;
 }
 
-@mixin absoluteRightBottom($right, $bottom) {
+@mixin absoluteRightBottom($right: 0, $bottom: 0) {
   position: absolute;
   right: $right;
   bottom: $bottom;
 }
 
-@mixin fixedLeftTop($left, $top) {
+@mixin fixedLeftTop($left: 0, $top: 0) {
   position: fixed;
   left: $left;
   top: $top;
 }
 
-@mixin fixedLeftBottom($left, $bottom) {
+@mixin fixedLeftBottom($left: 0, $bottom: 0) {
   position: fixed;
   left: $left;
   bottom: $bottom;
 }
 
-@mixin fixedRightTop($right, $top) {
+@mixin fixedRightTop($right: 0, $top: 0) {
   position: fixed;
   right: $right;
   top: $top;
 }
 
-@mixin fixedRightBottom($right, $bottom) {
+@mixin fixedRightBottom($right: 0, $bottom: 0) {
   position: fixed;
   right: $right;
   bottom: $bottom;
@@ -97,17 +97,8 @@
   margin-right: -$width / 2;
 }
 
-//角丸
-@mixin border-radius($radius) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  -o-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
-}
-
 //formカスタマイズ
-@mixin selectCustomize($width, $height){
+@mixin selectCustomize($width, $height) {
   @include appearance(button);
   width: $width;
   height: $height;
@@ -120,7 +111,7 @@
 }
 
 //radioカスタマイズ
-@mixin radioCustomize($width, $height){
+@mixin radioCustomize($width, $height) {
   @include appearance(button);
   width: $width;
   height: $height;
@@ -138,5 +129,3 @@
     content: "";
   }
 }
-
-//テーブル風dl

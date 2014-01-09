@@ -5,6 +5,66 @@
 }
 
 //position指定
+@mixin relativeLeft($left: 0) {
+  position: relative;
+  left: $left;
+}
+
+@mixin relativeRight($right: 0) {
+  position: relative;
+  right: $right;
+}
+
+@mixin relativeTop($top: 0) {
+  position: relative;
+  top: $top;
+}
+
+@mixin relativeBottom($bottom: 0) {
+  position: relative;
+  bottom: $bottom;
+}
+
+@mixin absoluteLeft($left: 0) {
+  position: absolute;
+  left: $left;
+}
+
+@mixin absoluteRight($right: 0) {
+  position: absolute;
+  right: $right;
+}
+
+@mixin absoluteTop($top: 0) {
+  position: absolute;
+  top: $top;
+}
+
+@mixin absoluteBottom($bottom: 0) {
+  position: absolute;
+  bottom: $bottom;
+}
+
+@mixin fixedLeft($left: 0) {
+  position: fixed;
+  left: $left;
+}
+
+@mixin fixedRight($right: 0) {
+  position: fixed;
+  right: $right;
+}
+
+@mixin fixedTop($top: 0) {
+  position: fixed;
+  top: $top;
+}
+
+@mixin fixedBottom($bottom: 0) {
+  position: fixed;
+  bottom: $bottom;
+}
+
 @mixin relativeLeftTop($left: 0, $top: 0) {
   position: relative;
   left: $left;

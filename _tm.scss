@@ -191,22 +191,22 @@
 }
 
 //テーブル風dl
-@mixin dlList($listSize, $dtWidth, $ddWidth){
+@mixin dlList($listSize, $dtWidth, $ddWidth) {
   width: $listSize;
-  dt{
-    float:left;
-    width:$dtWidth;
-    clear:both;
+  dt {
+    float: left;
+    width: $dtWidth;
+    clear: both;
   }
-  dd{
-    width:$ddWidth;
-    margin-left:$dtWidth;
+  dd {
+    width: $ddWidth;
+    margin-left: $dtWidth;
   }
 }
 
 //Android4 文章の折り返し位置のバグ対応
-@mixin androidWordWrap{
-  body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+@mixin androidWordWrap {
+  body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
     background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=) no-repeat;
   }
 }

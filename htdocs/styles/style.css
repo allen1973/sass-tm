@@ -101,6 +101,6 @@ a {
   border-right: 1px solid #ccc;
 }
 #examples .fixAndroidWordWrap .mainArea {
-  background: #ffcccc;
+  line-height: 1.5;
   padding: 20px;
 }

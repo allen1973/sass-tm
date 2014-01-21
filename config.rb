@@ -5,7 +5,7 @@ end
 # サーバのルートのパス
 http_path = "/"
 # ローカルのルートのパス
-project_path = "/"
+project_path = "htdocs"
 # CSSの出力先ディレクトリ（project_pathからの相対パス）
 css_dir = "styles"
 # 画像のディレクトリ（project_pathからの相対パス）
@@ -13,9 +13,9 @@ images_dir = "images"
 # JavaScriptのディレクトリ（project_pathからの相対パス）
 javascripts_dir = "scripts"
 # Sassのディレクトリ（project_pathからの相対パス）
-sass_dir = "sass"
+sass_dir = "../sass"
 # Cacheのディレクトリ（project_pathからの相対パス）
-cache_dir = ".sass-cache"
+cache_dir = "../.sass-cache"
 # CSSの出力スタイル
 output_style = :expanded
 

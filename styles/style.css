@@ -1,0 +1,72 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+.android4 body, .android4 div, .android4 span, .android4 object, .android4 iframe, .android4 h1, .android4 h2, .android4 h3, .android4 h4, .android4 h5, .android4 h6, .android4 p, .android4 blockquote, .android4 pre, .android4 abbr, .android4 address, .android4 cite, .android4 code, .android4 del, .android4 dfn, .android4 em, .android4 img, .android4 ins, .android4 kbd, .android4 q, .android4 samp, .android4 small, .android4 strong, .android4 sub, .android4 sup, .android4 var, .android4 b, .android4 i, .android4 dl, .android4 dt, .android4 dd, .android4 ol, .android4 ul, .android4 li, .android4 fieldset, .android4 form, .android4 label, .android4 legend, .android4 table, .android4 caption, .android4 tbody, .android4 tfoot, .android4 thead, .android4 tr, .android4 th, .android4 td, .android4 article, .android4 aside, .android4 canvas, .android4 details, .android4 figcaption, .android4 figure, .android4 footer, .android4 header, .android4 hgroup, .android4 menu, .android4 nav, .android4 section, .android4 summary, .android4 time, .android4 mark, .android4 audio, .android4 video {
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=") no-repeat;
+}
+
+body {
+  font-family: "メイリオ", "Meiryo", verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+  line-height: 1.5;
+  font-size: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+
+#examples .mainArea {
+  background: #ffcccc;
+  padding: 20px;
+}

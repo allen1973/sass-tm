@@ -37,3 +37,6 @@ bin-release/
 *.mpg
 *.rm
 *.wmv
+
+htdocs/
+sass/

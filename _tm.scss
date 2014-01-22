@@ -1,12 +1,12 @@
 $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
 
-//サイズ指定
+// サイズ指定
 @mixin size($width, $height: $width) {
   width: $width;
   height: $height;
 }
 
-//position指定
+// position指定
 @mixin relativeLeft($left: 0) {
   position: relative;
   left: $left;
@@ -159,7 +159,7 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
   margin-right: -$width / 2;
 }
 
-//formカスタマイズ
+// formカスタマイズ
 @mixin selectCustomize($width, $height) {
   @include appearance(button);
   width: $width;
@@ -172,7 +172,7 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
   }
 }
 
-//radioカスタマイズ
+// radioカスタマイズ
 @mixin radioCustomize($width, $height) {
   @include appearance(button);
   width: $width;
@@ -206,8 +206,8 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
   }
 }
 
-//Android4 文章の折り返し位置のバグ対応
-// jquery-tm v0.5.8~ $.env() と共に使う
+// Android4 文章の折り返し位置のバグ対応
+// jquery-tm v0.5.8~ $.fn.env() と共に使う
 @mixin fixAndroidWordWrap {
   .android4 {
     body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@import "compass";
+@import "tm";
+
+@include fixAndroidWordWrap;
+
+
+body{
+  @include absoluteLeftBottom(500px,100px);
+}
+
+select {
+  @include selectCustomize(50px, 100px);
+}
+
+input[type="radio"] {
+  @include radioCustomize(50px, 52px);
+  background: #f00;
+  &:checked:after {
+    background: #fff;
+  }
+}

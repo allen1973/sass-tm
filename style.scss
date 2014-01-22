@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+@import "compass";
+@import "compass/reset/";
+@import "tm";
+
+@include fixAndroidWordWrap;
+
+body {
+  font-family: "メイリオ", "Meiryo", verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+  line-height: 1;
+  font-size: 24px;
+  -webkit-text-size-adjust: 100%;
+}
+a{
+  text-decoration: none;
+}
+
+#examples{
+  header{
+    background: image-url("bg.png");
+    font-size: 0;
+    position: relative;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.4),0 0px 10px rgba(0,0,0,0.1);
+    margin: 0 0 20px;
+    h1{
+      padding: 15px;
+    }
+  }
+  .top{
+    .linkList{
+      .buttons{
+        display: table;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        border-top: 1px solid #ccc;
+        margin: 10px 0 0;
+        .before,.after{
+          display: table-cell;
+          width: 50%;
+          text-align: center;
+          a{
+            display: block;
+            padding: 15px 0;
+          }
+        }
+        .before a{
+          border-right: 1px solid #ccc;
+        }
+      }
+    }
+  }
+  .fixAndroidWordWrap{
+    .mainArea {
+      line-height: 1.5;
+      padding: 20px;
+    }
+  }
+}

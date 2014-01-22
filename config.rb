@@ -5,7 +5,7 @@ end
 # サーバのルートのパス
 http_path = "/"
 # ローカルのルートのパス
-project_path = "htdocs"
+project_path = "test"
 # CSSの出力先ディレクトリ（project_pathからの相対パス）
 css_dir = "styles"
 # 画像のディレクトリ（project_pathからの相対パス）

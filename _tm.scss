@@ -215,3 +215,9 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
     }
   }
 }
+
+//2行目以降を一文字下げる
+@mixin secondLineIndent($width){
+  padding-left: $width;
+  text-indent: -$width;
+}

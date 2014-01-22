@@ -49,4 +49,3 @@ on_stylesheet_saved do |filename|
     end
   end
 end
-

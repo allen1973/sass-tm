@@ -221,3 +221,9 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
   padding-left: $width;
   text-indent: -$width;
 }
+
+// 背景に透明画像を指定する（IE対策を含める）
+// IEではalphaで背景を消すと表示範囲を確保できないため透明画像を配置する必要がある。
+@mixin transparent {
+  background: url($blank-png);
+}

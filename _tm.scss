@@ -234,3 +234,10 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
     display: none;
   }
 }
+
+// コンテンツをセンタリング
+@mixin parentCentering($width){
+  width: $width;
+  margin: 0 auto;
+  position: relative;
+}

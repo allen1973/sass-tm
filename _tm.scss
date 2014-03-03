@@ -227,3 +227,10 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
 @mixin transparent {
   background: url($blank-png);
 }
+
+// IE10でinputに出てくるクリアボタンを表示させない
+@mixin inputClearInvisible{
+  &::-ms-clear {
+    display: none;
+  }
+}

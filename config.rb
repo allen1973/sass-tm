@@ -13,7 +13,7 @@ images_dir = "images"
 # JavaScriptのディレクトリ（project_pathからの相対パス）
 javascripts_dir = "scripts"
 # Sassのディレクトリ（project_pathからの相対パス）
-sass_dir = "sass"
+sass_dir = "../sass"
 # Cacheのディレクトリ（project_pathからの相対パス）
 cache_dir = "../.sass-cache"
 # CSSの出力スタイル

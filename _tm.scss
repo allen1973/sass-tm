@@ -241,3 +241,31 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
   margin: 0 auto;
   position: relative;
 }
+
+// アスペクト比で出し分け（iPhone）
+@mixin iPhoneDeviceAspectRatio{
+  @media screen and (device-aspect-ratio: 2/3) {
+    .iPhoneUnder5 {
+      display: block;
+    }
+    .iPhoneOver5 {
+      display: none;
+    }
+  }
+  @media screen and (device-aspect-ratio: 40/71) {
+    .iPhoneUnder5 {
+      display: none;
+    }
+    .iPhoneOver5 {
+      display: block;
+    }
+  }
+  @media screen and (device-aspect-ratio: 3/4) {
+    .iPhoneUnder5 {
+      display: none;
+    }
+    .iPhoneOver5 {
+      display: block;
+    }
+  }
+}

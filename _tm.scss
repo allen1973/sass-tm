@@ -6,6 +6,12 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
   height: $height;
 }
 
+// 最小サイズ指定
+@mixin minSize($width, $height) {
+  min-width: $width;
+  min-height: $height;
+}
+
 // position指定
 @mixin relativeLeft($left: 0) {
   position: relative;

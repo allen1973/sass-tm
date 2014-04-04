@@ -269,3 +269,15 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
     }
   }
 }
+
+//sprite高速化
+//$button: sprite-map("button/*.png");
+//$sprites-button: sprite-url($button);
+//↑と共に使用・複数可
+@mixin quickSprite($name, $sprites, $sprites-img) {
+  background-image: $sprites-img;
+  background-repeat: no-repeat;
+  display: block;
+  $ypos: round(nth(sprite-position($sprites, $name), 2));
+  background-position: 0 $ypos;
+}

@@ -41,11 +41,12 @@ end
 
 # スプライト画像生成時に生成されたファイル名に自動的に付けられるハッシュ文字列を削除し、
 # キャッシュバスターとして利用する
+# device-pixel-ratioの分数内に挿入される半角スペースを削除
 on_stylesheet_saved do |filename|
   if File.file?(filename)
     css = File.read(filename)
     File.open(filename, 'w+') do |f|
-      f << css.gsub(%r{-s([0-9a-f]{10})(\.\w+)}, '\2?\1')
+      f << css.gsub(%r{-s([0-9a-f]{10})(\.\w+)}, '\2?\1').gsub(%r{(device-aspect-ratio:\s*)(\d+)\s*(/)\s*(\d+)}, '\1\2\3\4')
     end
   end
 end

@@ -7,166 +7,166 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
 }
 
 // 最小サイズ指定
-@mixin minSize($width, $height) {
+@mixin min-size($width, $height) {
   min-width: $width;
   min-height: $height;
 }
 
 // position指定
-@mixin relativeLeft($left: 0) {
+@mixin relative-left($left: 0) {
   position: relative;
   left: $left;
 }
 
-@mixin relativeRight($right: 0) {
+@mixin relative-right($right: 0) {
   position: relative;
   right: $right;
 }
 
-@mixin relativeTop($top: 0) {
+@mixin relative-top($top: 0) {
   position: relative;
   top: $top;
 }
 
-@mixin relativeBottom($bottom: 0) {
+@mixin relative-bottom($bottom: 0) {
   position: relative;
   bottom: $bottom;
 }
 
-@mixin absoluteLeft($left: 0) {
+@mixin absolute-left($left: 0) {
   position: absolute;
   left: $left;
 }
 
-@mixin absoluteRight($right: 0) {
+@mixin absolute-right($right: 0) {
   position: absolute;
   right: $right;
 }
 
-@mixin absoluteTop($top: 0) {
+@mixin absolute-top($top: 0) {
   position: absolute;
   top: $top;
 }
 
-@mixin absoluteBottom($bottom: 0) {
+@mixin absolute-bottom($bottom: 0) {
   position: absolute;
   bottom: $bottom;
 }
 
-@mixin fixedLeft($left: 0) {
+@mixin fixed-left($left: 0) {
   position: fixed;
   left: $left;
 }
 
-@mixin fixedRight($right: 0) {
+@mixin fixed-right($right: 0) {
   position: fixed;
   right: $right;
 }
 
-@mixin fixedTop($top: 0) {
+@mixin fixed-top($top: 0) {
   position: fixed;
   top: $top;
 }
 
-@mixin fixedBottom($bottom: 0) {
+@mixin fixed-bottom($bottom: 0) {
   position: fixed;
   bottom: $bottom;
 }
 
-@mixin relativeLeftTop($left: 0, $top: 0) {
+@mixin relative-left-top($left: 0, $top: 0) {
   position: relative;
   left: $left;
   top: $top;
 }
 
-@mixin relativeLeftBottom($left: 0, $bottom: 0) {
+@mixin relative-left-bottom($left: 0, $bottom: 0) {
   position: relative;
   left: $left;
   bottom: $bottom;
 }
 
-@mixin relativeRightTop($right: 0, $top: 0) {
+@mixin relative-right-top($right: 0, $top: 0) {
   position: relative;
   right: $right;
   top: $top;
 }
 
-@mixin relativeRightBottom($right: 0, $bottom: 0) {
+@mixin relative-right-bottom($right: 0, $bottom: 0) {
   position: relative;
   right: $right;
   bottom: $bottom;
 }
 
-@mixin absoluteLeftTop($left: 0, $top: 0) {
+@mixin absolute-left-top($left: 0, $top: 0) {
   position: absolute;
   left: $left;
   top: $top;
 }
 
-@mixin absoluteLeftBottom($left: 0, $bottom: 0) {
+@mixin absolute-left-bottom($left: 0, $bottom: 0) {
   position: absolute;
   left: $left;
   bottom: $bottom;
 }
 
-@mixin absoluteRightTop($right: 0, $top: 0) {
+@mixin absolute-right-top($right: 0, $top: 0) {
   position: absolute;
   right: $right;
   top: $top;
 }
 
-@mixin absoluteRightBottom($right: 0, $bottom: 0) {
+@mixin absolute-right-bottom($right: 0, $bottom: 0) {
   position: absolute;
   right: $right;
   bottom: $bottom;
 }
 
-@mixin fixedLeftTop($left: 0, $top: 0) {
+@mixin fixed-left-top($left: 0, $top: 0) {
   position: fixed;
   left: $left;
   top: $top;
 }
 
-@mixin fixedLeftBottom($left: 0, $bottom: 0) {
+@mixin fixed-left-bottom($left: 0, $bottom: 0) {
   position: fixed;
   left: $left;
   bottom: $bottom;
 }
 
-@mixin fixedRightTop($right: 0, $top: 0) {
+@mixin fixed-right-top($right: 0, $top: 0) {
   position: fixed;
   right: $right;
   top: $top;
 }
 
-@mixin fixedRightBottom($right: 0, $bottom: 0) {
+@mixin fixed-right-bottom($right: 0, $bottom: 0) {
   position: fixed;
   right: $right;
   bottom: $bottom;
 }
 
-@mixin heightNegativeTop($height) {
+@mixin height-negative-top($height) {
   height: $height;
   margin-top: -$height / 2;
 }
 
-@mixin heightNegativeBottom($height) {
+@mixin height-negative-bottom($height) {
   height: $height;
   margin-bottom: -$height / 2;
 }
 
-@mixin widthNegativeLeft($width) {
+@mixin width-negative-left($width) {
   width: $width;
   margin-left: -$width / 2
 }
 
-@mixin widthNegativeRight($width) {
+@mixin width-negative-right($width) {
   width: $width;
   margin-right: -$width / 2;
 }
 
 // formカスタマイズ
-@mixin selectCustomize($width, $height) {
+@mixin select-customize($width, $height) {
   @include appearance(button);
   width: $width;
   height: $height;
@@ -179,7 +179,7 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
 }
 
 // radioカスタマイズ
-@mixin radioCustomize($width, $height) {
+@mixin radio-customize($width, $height) {
   @include appearance(button);
   width: $width;
   height: $height;
@@ -199,22 +199,22 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
 }
 
 //テーブル風dl
-@mixin dlList($listSize, $dtWidth, $ddWidth) {
-  width: $listSize;
+@mixin dl-list($list-size, $dt-width, $dd-width) {
+  width: $list-size;
   dt {
     float: left;
-    width: $dtWidth;
+    width: $dt-width;
     clear: both;
   }
   dd {
-    width: $ddWidth;
-    margin-left: $dtWidth;
+    width: $dd-width;
+    margin-left: $dt-width;
   }
 }
 
 // Android4 文章の折り返し位置のバグ対応
 // jquery-tm v0.5.8~ $.fn.env() と共に使う
-@mixin fixAndroidWordWrap {
+@mixin fix-android-word-wrap {
   .android4 {
     body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
       background: url($blank-png) no-repeat;
@@ -223,7 +223,7 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
 }
 
 // 2行目以降を一文字下げる
-@mixin secondLineIndent($width) {
+@mixin second-line-indent($width) {
   padding-left: $width;
   text-indent: -$width;
 }
@@ -235,42 +235,42 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
 }
 
 // IE10でinputに出てくるクリアボタンを表示させない
-@mixin inputClearInvisible{
+@mixin input-clear-invisible{
   &::-ms-clear {
     display: none;
   }
 }
 
 // コンテンツをセンタリング
-@mixin parentCentering($width){
+@mixin parent-centering($width){
   width: $width;
   margin: 0 auto;
   position: relative;
 }
 
 // アスペクト比で出し分け（iPhone）
-@mixin iPhoneDeviceAspectRatio{
+@mixin iphone-device-aspect-ratio{
   @media screen and (device-aspect-ratio: 2/3) {
-    .iPhoneUnder5 {
+    .iphone-under5 {
       display: block;
     }
-    .iPhoneOver5 {
+    .iphone-over5 {
       display: none;
     }
   }
   @media screen and (device-aspect-ratio: 40/71) {
-    .iPhoneUnder5 {
+    .iphone-under5 {
       display: none;
     }
-    .iPhoneOver5 {
+    .iphone-over5 {
       display: block;
     }
   }
   @media screen and (device-aspect-ratio: 3/4) {
-    .iPhoneUnder5 {
+    .iphone-under5 {
       display: none;
     }
-    .iPhoneOver5 {
+    .iphone-over5 {
       display: block;
     }
   }
@@ -280,7 +280,7 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
 //$button: sprite-map("button/*.png");
 //$sprites-button: sprite-url($button);
 //↑と共に使用・複数可
-@mixin quickSprite($name, $sprites, $sprites-img) {
+@mixin quick-sprite($name, $sprites, $sprites-img) {
   background-image: $sprites-img;
   background-repeat: no-repeat;
   display: block;

@@ -287,3 +287,10 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
   $ypos: round(nth(sprite-position($sprites, $name), 2));
   background-position: 0 $ypos;
 }
+
+//画像を可変にする
+@mixin liquid-size-image{
+  img{
+    max-width: 100%;
+  }
+}

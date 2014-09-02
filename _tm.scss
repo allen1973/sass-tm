@@ -1,5 +1,5 @@
-// ディレクトリ毎にも _setting.scss を置く場合は _tm.scss より先に読み込む
-@import 'setting';
+// ディレクトリ毎にも _supported_browsers.scss を置く場合は _tm.scss より先に読み込む
+@import 'supported_browsers';
 
 // ブランク画像
 $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';

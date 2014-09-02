@@ -1,4 +1,4 @@
-compass-config
+sass-config
 ==============
 
 TryMoreの規定のディレクトリ構造用のconfig.rb

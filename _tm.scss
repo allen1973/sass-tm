@@ -1,3 +1,7 @@
+// ディレクトリ毎にも _setting.scss を置く場合は _tm.scss より先に読み込む
+@import 'setting';
+
+// ブランク画像
 $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQI12NgYAAAAAMAASDVlMcAAAAASUVORK5CYII=';
 
 // サイズ指定
@@ -165,6 +169,51 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
   margin-right: -$width / 2;
 }
 
+@mixin relative($from, $from1: auto, $from2: auto) {
+  position: relative;
+  @if      $from == top         { top: $from1; }
+  @else if $from == right       { right: $from1; }
+  @else if $from == bottom      { bottom: $from1; }
+  @else if $from == left        { left: $from1; }
+  @else if $from == topLeft     { top: $from1; left: $from2; }
+  @else if $from == topRight    { top: $from1; right: $from2; }
+  @else if $from == bottomRight { bottom: $from1; right: $from2; }
+  @else if $from == bottomLeft  { bottom: $from1; left: $from2; }
+}
+
+@mixin absolute($from, $from1: auto, $from2: auto) {
+  position: absolute;
+  @if      $from == top         { top: $from1; }
+  @else if $from == right       { right: $from1; }
+  @else if $from == bottom      { bottom: $from1; }
+  @else if $from == left        { left: $from1; }
+  @else if $from == topLeft     { top: $from1; left: $from2; }
+  @else if $from == topRight    { top: $from1; right: $from2; }
+  @else if $from == bottomRight { bottom: $from1; right: $from2; }
+  @else if $from == bottomLeft  { bottom: $from1; left: $from2; }
+}
+
+@mixin fixed($from, $from1: auto, $from2: auto) {
+  position: fixed;
+  @if      $from == top         { top: $from1; }
+  @else if $from == right       { right: $from1; }
+  @else if $from == bottom      { bottom: $from1; }
+  @else if $from == left        { left: $from1; }
+  @else if $from == topLeft     { top: $from1; left: $from2; }
+  @else if $from == topRight    { top: $from1; right: $from2; }
+  @else if $from == bottomRight { bottom: $from1; right: $from2; }
+  @else if $from == bottomLeft  { bottom: $from1; left: $from2; }
+}
+
+@mixin position($range1: 0, $range2: 0, $range3: 0, $range4: 0) {
+  position: absolute;
+  margin: auto;
+  top: $range1;
+  right: $range2;
+  bottom: $range3;
+  left: $range4;
+}
+
 // formカスタマイズ
 @mixin select-customize($width, $height) {
   @include appearance(button);
@@ -293,4 +342,281 @@ $blank-png: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCA
   img{
     max-width: 100%;
   }
+}
+
+//clerfix
+@mixin clearfix {
+  @if $support-ie7 {
+    *zoom: 1;
+  }
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+//インラインで横並びにして隙間を埋める
+@mixin inline-block-list {
+  letter-spacing: -.4em;
+  > * {
+    display: inline-block;
+    @if $support-ie7 {
+      *display: inline;
+      *zoom: 1;
+    }
+    letter-spacing: normal;
+  }
+}
+
+//画像置換用に文字を画面外に飛ばす
+@mixin img-replace {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+//1行テキストがはみ出た場合...表示
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+//三角形
+@mixin arrow($direction: left, $size: 10px, $color: #000, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  $colors: "";
+  @if      $direction == top    { $colors: $color transparent transparent; }
+  @else if $direction == right  { $colors: transparent $color transparent transparent; }
+  @else if $direction == bottom { $colors: transparent transparent $color; }
+  @else if $direction == left   { $colors: transparent transparent transparent $color; }
+  @else if $direction == topLeft      { $colors: $color transparent transparent $color; }
+  @else if $direction == topRight     { $colors: $color $color transparent transparent; }
+  @else if $direction == bottomRight  { $colors: transparent $color $color transparent; }
+  @else if $direction == bottomLeft   { $colors: transparent transparent $color $color; }
+  border: {
+    width: $size;
+    style: solid;
+    color: $colors;
+  }
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+//ポリフィル
+@mixin inline-block { //IE6-7
+  display: inline-block;
+  @if $support-ie7 {
+    *display: inline;
+    *zoom: 1;
+  }
+}
+@mixin opacity($val) { //IE6-8
+  opacity: $val;
+  @if $support-ie8 {
+    $opacityIE: $val * 100;
+    filter: alpha(opacity=$opacityIE);
+  }
+}
+@mixin font-size($val) { //IE6-8
+  @if $support-ie8 {
+    font-size: $val + px;
+  }
+  font-size: $val / 10 + rem;
+}
+
+//webkit用のハック
+@mixin hack-webkit {
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @content;
+  }
+}
+
+// break point
+@mixin media-screen-break-width {
+  @media screen and (max-width: $breakpoint-width) {
+    @content;
+  }
+}
+@mixin media-screen-break-height {
+  @media screen and (max-height: $breakpoint-height) {
+    @content;
+  }
+}
+
+// ratina
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+    @content;
+  }
+}
+
+//===== プレフィックス =====
+
+// transform
+@mixin transform($val) {
+  @if $support-webkit { -webkit-transform: $val; }
+  @if $support-ie9    {     -ms-transform: $val; }
+                                transform: $val;
+}
+@mixin transform-style($val) {
+  @if $support-webkit { -webkit-transform-style: $val; }
+                                transform-style: $val;
+}
+@mixin perspective($val) {
+  @if $support-webkit { -webkit-perspective: $val; }
+                                perspective: $val;
+}
+@mixin backface-visibility($val) {
+  @if $support-webkit { -webkit-backface-visibility: $val; }
+                                backface-visibility: $val;
+}
+@mixin transform-origin($val) {
+  @if $support-webkit { -webkit-transform-origin: $val; }
+  @if $support-ie9    {     -ms-transform-origin: $val; }
+                                transform-origin: $val;
+}
+
+// transition
+@mixin transition($val) {
+  @if $support-webkit { -webkit-transition: $val; }
+                                transition: $val;
+}
+
+// animation
+@mixin animation($val) {
+  @if $support-webkit { -webkit-animation: $val; }
+                                animation: $val;
+}
+@mixin animation-name($val...) {
+  @if $support-webkit { -webkit-animation-name: $val; }
+                                animation-name: $val;
+}
+@mixin animation-duration($val...) {
+  @if $support-webkit { -webkit-animation-duration: $val; }
+                                animation-duration: $val;
+}
+@mixin animation-timing-function($val...) {
+  @if $support-webkit { -webkit-animation-timing-function: $val; }
+                                animation-timing-function: $val;
+}
+@mixin animation-delay($val...) {
+  @if $support-webkit { -webkit-animation-delay: $val; }
+                                animation-delay: $val;
+}
+@mixin animation-iteration-count($val...) {
+  @if $support-webkit { -webkit-animation-iteration-count: $val; }
+                                animation-iteration-count: $val;
+}
+@mixin animation-iteration-direction($val...) {
+  @if $support-webkit { -webkit-animation-direction: $val; }
+                                animation-direction: $val;
+}
+@mixin animation-fill-mode($val...) {
+  @if $support-webkit { -webkit-animation-fill-mode: $val; }
+                                animation-fill-mode: $val;
+}
+@mixin keyframes($name) {
+  @if $support-webkit {
+    @-webkit-keyframes $name { @content; }
+  }
+            @keyframes $name { @content; }
+}
+
+// display box
+@mixin display-box() {
+  @if $support-webkit { display: -webkit-box; }
+  @if $support-moz    { display:    -moz-box; }
+                        display:         box;
+}
+@mixin box-orient($val) {
+  @if $support-webkit { -webkit-box-orient: box; }
+  @if $support-moz    {    -moz-box-orient: box; }
+                                box-orient: box;
+}
+@mixin box-pack($val) {
+  @if $support-webkit { -webkit-box-pack: box; }
+  @if $support-moz    {    -moz-box-pack: box; }
+                                box-pack: box;
+}
+@mixin box-align($val) {
+  @if $support-webkit { -webkit-box-align: box; }
+  @if $support-moz    {    -moz-box-align: box; }
+                                box-align: box;
+}
+
+// box sizing
+@mixin box-sizing($val) { //moz, androd3.0
+  @if $support-moz       {    -moz-box-sizing: $val; }
+  @if $support-android30 { -webkit-box-sizing: $val; }
+                                   box-sizing: $val;
+}
+
+// box shadow
+@mixin box-shadow($val) { //androd3.0
+  @if $support-android30 { -webkit-box-shadow: $val; }
+                                   box-shadow: $val;
+}
+
+// background
+@mixin background-size($val) { //androd2.3
+  @if $support-android23 { -webkit-background-size: $val; }
+                                   background-size: $val;
+}
+@mixin background-gradient($direction, $colors...) {
+  @if $support-android23 {
+    $len: length($colors);
+    $i: 1;
+    $_colors: "";
+    $_direction: "";
+    @each $color in $colors {
+      @if 1 == $i {
+        $_colors: $_colors + from($color);
+      }
+      @else if $len == $i {
+        $_colors: $_colors + ", " + to($color);
+      }
+      @else {
+        $_pos: nth($color, 2) / 100 / 1%;
+        $_val: color-stop(unquote($_pos + ", " + nth($color, 1)));
+        $_colors: $_colors + ", " + $_val;
+      }
+      $i: $i + 1;
+    }
+    @if      $direction == "to bottom"           { $_direction: left top, left bottom; }
+    @else if $direction == "to top"              { $_direction: left bottom, left top; }
+    @else if $direction == "to left"             { $_direction: right top, left top; }
+    @else if $direction == "to right"            { $_direction: left top, right top; }
+    @else if $direction == "to bottom left"      { $_direction: right top, left bottom; }
+    @else if $direction == "to bottom right"     { $_direction: left top, right bottom; }
+    @else if $direction == "to top left"         { $_direction: right bottom, left top; }
+    @else if $direction == "to top right"        { $_direction: left bottom, right top; }
+    background-image: -webkit-gradient(linear, $_direction, unquote($_colors));
+  }
+  @if $support-android44 {
+    $_direction: "";
+    @if      $direction == "to bottom"           { $_direction: top; }
+    @else if $direction == "to top"              { $_direction: bottom; }
+    @else if $direction == "to left"             { $_direction: right; }
+    @else if $direction == "to right"            { $_direction: left; }
+    @else if $direction == "to bottom left"      { $_direction: top right; }
+    @else if $direction == "to bottom right"     { $_direction: top left; }
+    @else if $direction == "to top left"         { $_direction: bottom right; }
+    @else if $direction == "to top right"        { $_direction: bottom left; }
+    background-image: -webkit-linear-gradient($_direction, $colors);
+  }
+  background-image: linear-gradient(unquote($direction), $colors);
+}
+
+// border
+@mixin border-image($val) { //androd4.3
+  @if $support-android43 { -webkit-border-image: $val; }
+                                   border-image: $val;
 }
